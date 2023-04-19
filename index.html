@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="container">
+        <ul>
+            <li>
+                <img src="img/list1.png" alt="Image 1" data-src="./video/clock.mp3">
+            </li>
+
+            <li>
+                <img src="img/list2.png" alt="Image 2" data-src="./video/fan.mp3">
+
+            </li>
+            <li>
+                <img src="img/list3.png" alt="Image 3" data-src="./video/radio.mp3">
+
+            </li>
+            <li>
+                <img src="img/list4.png" alt="Image 4" data-src="./video/basketball.mp3">
+
+            </li>
+            <li>
+                <img src="img/list5.png" alt="Image 5" data-src="./video/run.mp3">
+
+            </li>
+            <li>
+                <img src="img/list6.png" alt="Image 6" data-src="./video/poker.mp3">
+
+            </li>
+            <li>
+                <img src="img/list7.png" alt="Image 7" data-src="./video/tv.mp3">
+
+            </li>
+            <li>
+                <img src="img/list8.png" alt="Image 8" data-src="./video/knife.mp3">
+
+            </li>
+            <li>
+                <img src="img/list9.png" alt="Image 9" data-src="./video/cheer.mp3">
+
+            </li>
+        </ul>
+    </div>
+    <audio id="bg-audio"></audio>
+</body>
+<script>
+    const images = document.querySelectorAll('img');
+    const audio = document.getElementById('bg-audio');
+    images.forEach((image) => {
+        image.addEventListener('click', () => {
+            const source = image.getAttribute('data-src');
+            audio.setAttribute('src', source);
+            audio.play();
+        });
+    });
+</script>
+
+</html>
