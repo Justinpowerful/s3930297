@@ -1,67 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+    <head>
+        <title>
+            My Name and my Theme
+            <!-- For example
+            Neroli Wesley - Theme: Calm 
+            -->
+        </title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/index.css">
-</head>
+        <style>
+            .row{
+                width:720px;
+                margin: 10px auto 10px auto ;
+            }
+            .image-container {
+                display: table-cell;
+                vertical-align: middle;
+                padding:20px;
+            }
+        
+    </style>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.2.1/buzz.min.js"></script>
 
-<body>
-    <div class="container">
-        <ul>
-            <li>
-                <img src="img/list1.png" alt="Image 1" data-src="./video/clock.mp3">
-            </li>
+    </head>
+    
+    <body style="background-color: rgb(63, 68, 68);">
+        
+        <div class="row">
+            <!-- This is a comment. It won't appear in your page -->
+            <!-- This long line contains the code for the image roll over which swaps in an alternative image. You need to select the extra code and paste it in for each image. Make sure the page still works after pasting. Replace the template file names with your own filenames for icons, the rollover version of icons and sounds.
+            -->
 
-            <li>
-                <img src="img/list2.png" alt="Image 2" data-src="./video/fan.mp3">
 
-            </li>
-            <li>
-                <img src="img/list3.png" alt="Image 3" data-src="./video/radio.mp3">
 
-            </li>
-            <li>
-                <img src="img/list4.png" alt="Image 4" data-src="./video/basketball.mp3">
+            <div class="image-container"><img id="list1" src="img/list1.1.png" onmouseover="this.src='img/list1.png';" onmouseout="this.src='img/list1.1.png';" width="200" height="200"/></div> 
+            <div class="image-container"><img id="list2" src="img/list2.2.png" onmouseover="this.src='img/list2.png';" onmouseout="this.src='img/list2.2.png';"width="200" height="200"/></div>
+            <div class="image-container"><img id="list3" src="img/list3.3.png" onmouseover="this.src='img/list3.png';" onmouseout="this.src='img/list3.3.png';"width="200" height="200"/></div>
+        </div>
 
-            </li>
-            <li>
-                <img src="img/list5.png" alt="Image 5" data-src="./video/run.mp3">
+        <div class="row">
+            <div class="image-container"><img id="list4" src="img/list4.4.png" onmouseover="this.src='img/list4.png';" onmouseout="this.src='img/list4.4.png';"width="200" height="200"/></div>
+            <div class="image-container"><img id="list5" src="img/list55.5.png" onmouseover="this.src='img/list5.png';" onmouseout="this.src='img/list5.5.png';"width="200" height="200"/></div>
+            <div class="image-container"><img id="list6" src="img/list6.6.png" onmouseover="this.src='img/list6.png';" onmouseout="this.src='img/list6.6.png';"width="200" height="200"/></div>
+        </div>
 
-            </li>
-            <li>
-                <img src="img/list6.png" alt="Image 6" data-src="./video/poker.mp3">
+        <div class="row">
+            <div class="image-container"><img id="list7" src="img/list7.7.png" onmouseover="this.src='img/list7.png';" onmouseout="this.src='img/list7.7.png';"width="200" height="200"/></div>
+            <div class="image-container"><img id="list8" src="img/list8.8.png" onmouseover="this.src='img/list8.png';" onmouseout="this.src='img/list8.8.png';"width="200" height="200"/></div>
+            <div class="image-container"><img id="list9" src="img/list9.9.png" onmouseover="this.src='img/list9.png';" onmouseout="this.src='img/list9.9.png';"width="200" height="200"/></div>
+        </div>
 
-            </li>
-            <li>
-                <img src="img/list7.png" alt="Image 7" data-src="./video/tv.mp3">
+        <script>
+            var sound1 = new buzz.sound("sound/clock.mp3");
+            var sound2 = new buzz.sound("sound/fan.mp3");
+            var sound3 = new buzz.sound("sound/radio.mp3");
+            var sound4 = new buzz.sound("sound/basketball.mp3");
+            var sound5 = new buzz.sound("sound/run.mp3");
+            var sound6 = new buzz.sound("sound/poker.mp3");
+            var sound7 = new buzz.sound("sound/TV.mp3");
+            var sound8 = new buzz.sound("sound/knife.mp3");
+            var sound9 = new buzz.sound("sound/cheer.mp3");
 
-            </li>
-            <li>
-                <img src="img/list8.png" alt="Image 8" data-src="./video/knife.mp3">
+            window.onload = function() {
+                document.getElementById('list1').addEventListener('click', function () {sound1.play();});
+                document.getElementById('list2').addEventListener('click', function () {sound2.play();});
+                document.getElementById('list3').addEventListener('click', function () {sound3.play();});
+                document.getElementById('list4').addEventListener('click', function () {sound4.play();});
+                document.getElementById('list5').addEventListener('click', function () {sound5.play();});
+                document.getElementById('list6').addEventListener('click', function () {sound6.play();}); 
+                document.getElementById('list7').addEventListener('click', function () {sound7.play();});
+                document.getElementById('list8').addEventListener('click', function () {sound8.play();});
+                document.getElementById('list9').addEventListener('click', function () {sound9.play();});
+            };
+        </script>
 
-            </li>
-            <li>
-                <img src="img/list9.png" alt="Image 9" data-src="./video/cheer.mp3">
-
-            </li>
-        </ul>
-    </div>
-    <audio id="bg-audio"></audio>
-</body>
-<script>
-    const images = document.querySelectorAll('img');
-    const audio = document.getElementById('bg-audio');
-    images.forEach((image) => {
-        image.addEventListener('click', () => {
-            const source = image.getAttribute('data-src');
-            audio.setAttribute('src', source);
-            audio.play();
-        });
-    });
-</script>
+    </body>
 
 </html>
+
